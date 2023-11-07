@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="sign-up-form.css">
+</head>
+
+<body>
+    <div class="form-wrapper">
+        <h1>Sign Up</h1>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <form id="form_1" method="post" accept-charset="utf-8" return false>
+            <div class="form-item">
+                <label for="email"></label>
+                <input id="email" type="email" name="email" required="required" placeholder="メールアドレス"></input>
+            </div>
+            <div class="form-item">
+                <label for="password"></label>
+                <input id="password" type="password" name="password" required="required" placeholder="パスワード"></input>
+            </div>
+            <div class="form-item">
+                <label for="password"></label>
+                <input type="password" name="password" required="required" placeholder="パスワード再確認"></input>
+            </div>
+            <div class="button-panel">
+                <input id="ajax" type="submit" class="button" title="Sign Up" value="登録する"></input>
+            </div>
+        </form>
+
+        <script type="text/javascript">
+
+            $(function () {
+                // Ajax button click
+                $('#ajax').on('click', function () {
+                    $.ajax({
+                        url: './ajax_test.php',
+                        type: 'POST',
+                        data: {
+                            'email': $('#email').val(),
+                            'password': $('#password').val()
+                        }
+                    })
+                        // Ajaxリクエストが成功した時発動
+                        .done((data) => {
+                            $('.result').html(data);
+                            console.log(data);
+                        })
+                        // Ajaxリクエストが失敗した時発動
+                        .fail((data) => {
+                            $('.result').html(data);
+                            console.log(data);
+                        })
+                        // Ajaxリクエストが成功・失敗どちらでも発動
+                        .always((data) => {
+
+                        });
+                });
+            });
+
+        </script>
+    </div>
+</body>
+
+</html>
