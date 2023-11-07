@@ -4,8 +4,8 @@
 ## ER図
 ```mermaid
 erDiagram
-    CLASS ||--o{ INFORMATION 
-    CLASS ||--o{ REVIEW
+    CLASS ||--o{ INFORMATION : ""
+    CLASS ||--o{ REVIEW : ""
     
     STUDENT {
         string username PK "ユーザー名"
@@ -26,7 +26,6 @@ erDiagram
         string username PK "ユーザー名"
         string score "点数"
         string comment "コメント"
-        string position "ポジション"
         string path "添付ファイル"
     }
 
