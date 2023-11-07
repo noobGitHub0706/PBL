@@ -8,26 +8,26 @@ erDiagram
     CLASS ||--o{ REVIEW : ""
     
     STUDENT {
-        char username PK "ユーザー名"
-        char email "メールアドレス"
-        char password "パスワード"
+        string username PK "ユーザー名"
+        string email "メールアドレス"
+        string password "パスワード"
     }
     CLASS {
-        char class PK "授業名"
-        char professor_name "教授名"
-        char class_information "授業情報"
+        string class PK "授業名"
+        string professor_name "教授名"
+        string class_information "授業情報"
     }
     INFORMATION {
-        char syllabus "シラバス"
-        char grading_criteria "評価基準"
-        char textbook "教科書"
+        string syllabus "シラバス"
+        string grading_criteria "評価基準"
+        string textbook "教科書"
     }
     REVIEW {
-        char username PK "ユーザー名"
-        char score "点数"
-        char comment "コメント"
-        char position "ポジション"
-        char path "添付ファイル"
+        string username PK "ユーザー名"
+        string score "点数"
+        string comment "コメント"
+        string position "ポジション"
+        string path "添付ファイル"
     }
 
 ```
