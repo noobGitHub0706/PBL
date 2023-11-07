@@ -8,7 +8,7 @@ erDiagram
     CLASS ||--o{ REVIEW : ""
     
     STUDENT {
-        int PK id "ユーザーID"
+        int id PK "ユーザーID"
         string username "ユーザー名"
         string email "メールアドレス"
         string password "パスワード"
